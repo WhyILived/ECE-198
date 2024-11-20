@@ -31,7 +31,7 @@ void I2C1_Init(void) {
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
     RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
 
-    // Configure PB8 (SCL) and PB9 (SDA) as alternate function (AF4)
+
     GPIOB->MODER |= (2U << GPIO_MODER_MODER8_Pos) | (2U << GPIO_MODER_MODER9_Pos);
     GPIOB->OTYPER |= GPIO_OTYPER_OT_8 | GPIO_OTYPER_OT_9;  // Open-drain
     GPIOB->OSPEEDR |= (3U << GPIO_OSPEEDER_OSPEEDR8_Pos) | (3U << GPIO_OSPEEDER_OSPEEDR9_Pos);  // High speed
